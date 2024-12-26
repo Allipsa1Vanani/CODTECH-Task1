@@ -28,3 +28,10 @@ The objective of this project is to develop a static temperature converter websi
 - **CSS**: For styling and layout design.
 - **JavaScript**: For implementing the temperature conversion logic and interactivity.
 - **Google Cloud Storage**: For hosting the static website.
+
+### Deployment
+Host the static website on Google Cloud Storage for public access.
+
+### Outcome
+Demonstrate the integration of cloud hosting with interactive static web applications.
+
