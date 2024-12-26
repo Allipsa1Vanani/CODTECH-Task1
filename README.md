@@ -1,8 +1,13 @@
 **Name:** ALLIPSA VANANI JALLY
+
 **Company:** CODTECH IT SOLUTIONS
+
 **ID:** CT08DS617
+
 **Domain:** Cloud Computing
+
 **Duration:** Dec 2024 to Jan 2025
+
 **Mentor:** SRAVANI GOUNI
 
 
