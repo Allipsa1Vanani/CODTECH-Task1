@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="index.js" defer></script>
+</head>
+
+
+
+<body>
+    
+    <header>
+        <label for="converter">Conversion of <span class="C">°C</span> to <span class="F">°F</span></label>
+    </header>
+
+    <div>
+        <input type="text" id="converter" placeholder="Enter the Number">
+    </div>
+
+    <p class="result"></p>
+
+    <div id="buttons">
+        <button class="convertButton">Convert</button>
+        <button class="resetButton">Reset</button>
+        <button class="changeButton">Change</button>
+    </div>
+
+    <footer>
+    <p>Created By Allipsa</p>
+    <p>&#169;All Rights Reserved 2024</p>
+      </footer>
+</body>
+
+</html>
+
+</body>
+</html>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  
+  body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 20px;
+  }
+  label {
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #0a375e;
+  }
+  input {
+    margin: 50px 0 10px;
+    padding: 7px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #f0f8ff;
+    color: #0a375e;
+  }
+  .result {
+    margin: 10px 0 50px;
+    font-size: 26px;
+    color: #dddd48;
+    letter-spacing: 1px;
+    height: 1em;
+    font-weight: bold;
+  }
+  
+  button {
+    text-align: center;
+    width: 8rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #105c9a;
+    color: #f5f5dc;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 15px;
+    margin-right: 1.5rem;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    color: beige;
+    text-align: center;
+  }
+  footer p{
+    margin-top: .5rem;
+  }
+ 
+  
+  /*  Media queries */
+  @media screen and (max-width: 400px){
+    label{
+      font-size: 30px;
+    }
+    button {
+      text-align: center;
+      width: 6rem;
+      height: 1.6rem;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    button {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+  }
+
+const converter = document.querySelector('#converter');
+const result = document.querySelector('.result');
+const convertButton = document.querySelector('.convertButton');
+const resetButton = document.querySelector('.resetButton');
+const changeButton = document.querySelector('.changeButton');
+const C = document.querySelector('.C')
+const F = document.querySelector('.F')
+
+const swap = () => {
+    if (C.innerHTML === '°C') {
+        C.innerHTML = '°F';
+        F.innerHTML = '°C';
+        converter.placeholder = "Temperature in °F";
+    }else {
+        F.innerHTML = '°F';
+        C.innerHTML = '°C';
+        converter.placeholder = "Temperature in °C";
+    };
+};
+
+const reset = () => {
+    converter.value = '';
+    result.innerHTML = '';
+}
+
+const convert = () => {
+    if (/^(-?)(\d+)(\.{1}\d+)?$/.test(converter.value)) {
+        result.style.color = "#dddd48"
+        if (C.innerHTML === '°C') {
+            let value = (converter.value * 1.8) + 32;
+            result.innerHTML = `${converter.value}°C is equal to ${value.toFixed(2)}°F`;
+        } else {
+            let value = (converter.value - 32) / 1.8;
+            result.innerHTML = `${converter.value}°F is equal to ${value.toFixed(2)}°C`;
+        }
+    } else if (converter.value == '') {
+        result.style.color = "#f92626"
+        result.innerHTML = 'Enter some number';
+    } else {
+        result.style.color = "#f92626"
+        result.innerHTML = 'Enter only numbers!!!';
+    }
+}
+
+changeButton.addEventListener('click', swap);
+resetButton.addEventListener('click', reset);
+convertButton.addEventListener('click', convert);
