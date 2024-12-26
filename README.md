@@ -14,6 +14,8 @@
 ## Overview of the Project
 
 ### Project: **CREATING A STATIC WEBSITE(Temperature Converter) WITH GOOGLE CLOUD STORAGE** 
+![Screenshot 2024-12-26 234446](https://github.com/user-attachments/assets/86dc2515-6594-4aa7-859f-65c60173475a)
+![Screenshot 2024-12-26 234537](https://github.com/user-attachments/assets/c6b3dab0-1cd5-4d66-b871-1a29caf2fe11)
 
 ### Objective
 The objective of this project is to develop a static temperature converter website using HTML, CSS, and JavaScript. It will allow users to convert temperatures between Celsius, Fahrenheit, and Kelvin through an interactive interface. The website will be hosted on Google Cloud Storage to demonstrate static web hosting capabilities. This project emphasizes the integration of front-end technologies with cloud-based deployment solutions.
