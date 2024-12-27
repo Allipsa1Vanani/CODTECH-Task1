@@ -8,7 +8,7 @@
 
 **Duration:** Dec 2024 to Jan 2025
 
-**Mentor:** SRAVANI GOUNI
+**Mentor:** NEELA SANTHOSH
 
 
 ## Overview of the Project
